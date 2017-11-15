@@ -8,11 +8,8 @@ RUN docker-php-ext-install zip
 
 RUN usermod -u 1000 www-data
 
-RUN ln -s /app /var/www
-
 WORKDIR /app
 
-RUN usermod -u 1000 www-data
 
 CMD ["php-fpm"]
 
