@@ -1,10 +1,7 @@
-FROM laradock/php-fpm:1.4-71
-
-
-RUN usermod -u 1000 www-data
+FROM php:7.1-fpm
 
 WORKDIR /app
 
+RUN usermod -u 1000 www-data
 
 
-EXPOSE 9000
