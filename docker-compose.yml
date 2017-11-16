@@ -16,6 +16,10 @@ services:
             - .:/app
         ports:
             - 9000:9000
+        networks:
+            - backend
+        links:
+            - app
 
     nginx:
         build:
@@ -26,6 +30,13 @@ services:
             - 8080:80
         links:
             - php
+        networks:
+            - frontend
+            - backend
 
 
-
+networks:
+    frontend:
+        driver: "bridge"
+    backend:
+        driver: "bridge"
